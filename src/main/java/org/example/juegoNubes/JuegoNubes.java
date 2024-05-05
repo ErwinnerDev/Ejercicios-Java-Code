@@ -10,6 +10,10 @@ public class JuegoNubes {
 
     public int jumpingOnClouds(List<Integer> c) {
         // Write your code here
-        return 0;
+        String[] split = c.toString().replaceAll("[,\\[\\]\\s]","").split("1");
+        Integer countCambioGrupo = split.length-1;
+        Stream<String> stream = Arrays.stream(split);
+        Optional<Integer> reduce = stream.map(x ->Math.floorDiv(x.length(), 2)).reduce(Integer::sum);
+        return reduce.map(sumaSaltosInternoGrupos -> (int) (sumaSaltosInternoGrupos + countCambioGrupo)).orElse(0);
     }
 }

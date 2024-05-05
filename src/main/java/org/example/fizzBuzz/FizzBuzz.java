@@ -11,7 +11,14 @@ Y si no es ni multiplo de 3 ni de 5, print i
     * */
 
     public String FizzBuzz(int i) {
-        // Write your code here
-        return null;
+        if(i%3==0 && i%5==0) {
+            return "FizzBuzz";
+        }else if(i%3==0) {
+            return "Fizz";
+        }else if(i%5==0) {
+            return "Buzz";
+        }else {
+            return "i";
+        }
     }
 }
